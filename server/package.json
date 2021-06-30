@@ -1,0 +1,14 @@
+{
+  "name": "sitebuilder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Daniel Barraca",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
