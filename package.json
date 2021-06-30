@@ -1,0 +1,19 @@
+{
+  "name": "sitebuilder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbarraca/SiteBuilder.git"
+  },
+  "author": "Daniel Barraca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbarraca/SiteBuilder/issues"
+  },
+  "homepage": "https://github.com/dbarraca/SiteBuilder#readme"
+}
