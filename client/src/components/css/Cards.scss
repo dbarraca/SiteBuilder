@@ -1,0 +1,18 @@
+@import "utilities/variables";
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card {
+    padding: 1.5em;
+    border-radius: .5em;
+    /* border: 1px solid black; */
+    margin: 1.5em;
+    text-align: start;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px mix($color-primary, $color-tone, 20%);
+    box-shadow: 0 2px 4px rgba(mix($color-primary, $color-shade, 20%), .2);
+}

@@ -1,0 +1,25 @@
+@import "utilities/variables";
+
+h3 {
+    color: $color-primary;
+}
+
+section {
+    /* background-color: green; */
+    margin: 0;
+    padding: 8em 2em;
+    // border: 1px solid #DDD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    /* background-color: pink; */
+    // min-height: 20em;
+    max-width: 1200px;
+    width: 100%;
+    // border: 1px solid #EEE;
+    /* padding: 1em; */
+}
