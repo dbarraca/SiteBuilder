@@ -1,0 +1,47 @@
+.navbar-section {
+    padding: 1em;
+    // padding-top: 5em;
+}
+
+.navbar nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5em;
+}
+
+.navbar nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav li {
+    list-style: none;
+    margin: 1em;
+}
+
+// .navbar nav {
+//     border-bottom: 1px solid #000;
+// }
+
+.navbar nav a {
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.navbar nav li span {
+    padding: 1em;
+}
+
+.navbar nav > a {
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}

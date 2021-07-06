@@ -4,16 +4,15 @@ function App() {
   return (
     <div className="App">
       <Section type="hero"/>
-      <Section type="about"/>
-      <Section type="testimonial"/>
-      <Section type="socials"/>
       <Section type="cards"/>
-      <Section type="image-text"/>
-      <Section type="purchase-options"/>
+      <Section type="feature"/>
+      <Section type="testimonial"/>
       <Section type="cta"/>
-      <Section type="Contact"/>
-      <Section type="email-form"/>
-      <Section type="footer"/>
+      <Section type="pricing"/>
+      <Section type="about"/>
+      <Section type="socials"/>
+      <Section type="email"/>
+      {/* <Section type="footer"/> */}
     </div>
   );
 }
