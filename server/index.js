@@ -46,7 +46,7 @@ app.use('/sites', sitesRouter);
 // If in production, then use static frontend build files.
 if (process.env.NODE_ENV === 'production') {
     // Serve static folder
-    app.use(express.static('../web/build'));
+    app.use(express.static('../client/build'));
 
     // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
@@ -55,8 +55,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 else {
     app.get('/', function(req, res) {
-        // res.sendFile(path.join(__dirname + '/static/index.html'));
-        res.send("Site Builder Web App");
+        res.sendFile(path.join(__dirname + '/static/index.html'));
+        // res.send("Site Builder Web App");
     });
 }
 
