@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-const AddSection = ({ sectionOptions, onAddSection }) => {
+const AddSection = ({ sectionOptions }) => {
     const [ selectedSection, setSelectedSection ] = useState("hero");
 
     const handleAdd = () => {
-        onAddSection(selectedSection);
+        // onAddSection(selectedSection);
+        console.log(selectedSection);
     }
 
     const handleSelect = () => {
@@ -15,7 +16,7 @@ const AddSection = ({ sectionOptions, onAddSection }) => {
         <section>
             <div className="add-section">
                 <select id="sectionSelect" onChange={handleSelect}>
-                    {sectionOptions.map((option) => (
+                    {sectionOptions && sectionOptions.map((option) => (
                         <option value={option}>{option}</option>
                     ))}
                 </select>
