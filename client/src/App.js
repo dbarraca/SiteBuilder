@@ -22,7 +22,7 @@ function App() {
   
   // Fetch site
   const fetchSite = async (subdomain) => {
-      const res = await fetch(`http://localhost:5000/sites/subdomain/${subdomain}`);
+      const res = await fetch(`/sites/subdomain/${subdomain}`);
       const data = await res.json();
   
       return data;
