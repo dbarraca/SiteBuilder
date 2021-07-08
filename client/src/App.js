@@ -22,7 +22,9 @@ function App() {
   
   // Fetch site
   const fetchSite = async (subdomain) => {
-      const res = await fetch(`/sites/subdomain/${subdomain}`);
+      const API = process.env.NODE_ENV === 'production' ? 'https://pagestager.herokuapp.com' : 'http://localhost:5000';
+
+      const res = await fetch(`${API}/sites/subdomain/${subdomain}`);
       const data = await res.json();
   
       return data;
