@@ -7,6 +7,7 @@
 }
 
 .card {
+    min-height: 128px;
     padding: 1.5em;
     border-radius: .5em;
     /* border: 1px solid black; */
@@ -19,4 +20,26 @@
 
 .card h2 {
     color: #333;
+}
+
+// .content-form .card {
+//     color: #333;
+//     font-size: 36px;
+// }
+
+.content-form .card .heading {
+    color: #333;
+    font-size: 36px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    max-width: 300px;
+}
+
+.content-form .card .message {
+    min-height: 215px;
+    min-width: 304px;
 }

@@ -1,0 +1,19 @@
+.add-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8em;
+}
+
+.add-section-btn {
+    background-color: #EEE;
+    // width: 400px;
+    // height: 200px;
+}
+
+.add-section select {
+    font-size: 24px;
+    width: 500px;
+    padding: 8px 8px 8px 24px;
+}

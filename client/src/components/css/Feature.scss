@@ -5,22 +5,45 @@
     justify-content: center;
 }
 
-.feature h2 {
+.feature .feature-heading {
     font-size: 48px;
     font-weight: bold;
     margin-top: 0;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    border: 1px solid transparent;
 }
 
 .feature-message {
     font-size: 24px;
     // margin-right: 3em;
     max-width: 600px;
+    width: 100%;
+}
+
+.content-form .feature-message {
+    font-size: 24px;
+    // margin-right: 3em;
+    // max-width: 600px;
+    // width: 100%;
+    width: 600px;
+    min-height: 140px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0;
+    border: 1px solid transparent;
 }
 
 .feature-image {
     height: 248px;
     width: 248px;
-    background-color: #EEE;
-    border: 1px solid #F1F1F1;
+    // background-color: #EEE;
+    // border: 1px solid #F1F1F1;
     margin: 0 4em;
 }

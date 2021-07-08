@@ -1,11 +1,11 @@
 import './css/Feature.scss';
-import Twitter from './img/twitter.svg';
+import FeatureImg from './img/Placeholder2.svg';
 
 const Feature = () => {
     return (
         <div className="feature">
             <div className="feature-text">
-                <h2>Feature</h2>
+                <h2 className="feature-heading">Feature</h2>
 
                 <p className="feature-message">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
@@ -14,7 +14,7 @@ const Feature = () => {
                 </p>
             </div>
 
-            <img className="feature-image" src={Twitter} alt="img placeholder"/>
+            <img className="feature-image" src={FeatureImg} alt="img placeholder"/>
         </div>
     )
 }

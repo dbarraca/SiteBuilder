@@ -48,11 +48,9 @@ const Content = ({ type }) => {
     }
 
     return (
-
         <div className="content">
             {content}
         </div>
-
     );
 }
 

@@ -33,8 +33,28 @@
     max-width: 600px;
 }
 
+.content-form .quote {
+    font-size: 24px;
+    // margin-right: 3em;
+    // max-width: 600px;
+    // width: 100%;
+    width: 600px;
+    min-height: 140px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0;
+    border: 1px solid transparent;
+}
+
 .quote-name {
     color: #444;
     font-size: 24px;
-    font-size: 600;
+}
+
+.content-form input.quote-name {
+    border: 1px solid transparent;
+    width: 100%;
 }
