@@ -7,7 +7,7 @@ import AddSection from './AddSection';
 
 const SiteBuilder = ({ sectionOptions, sections }) => {
 
-    console.log(sections);
+    // console.log("Site Builder", sections);
 
     // const [ sections, setSections ] = useState(
     //     ['hero', 'cards', 'feature', 'testimonial', 'email' ]
@@ -21,9 +21,9 @@ const SiteBuilder = ({ sectionOptions, sections }) => {
 
     return (
         <div className="site-builder">
-            {sections.map((section) => (
-                // <h1>{section.type}</h1>
-                <Section type={section.type} />
+
+            {sections && sections.map((section, index) => (
+                <Section key={index} type={section.type} />
             ))}
             {/* {sections.map( (section) => (
                 <Section type={section.type} />
