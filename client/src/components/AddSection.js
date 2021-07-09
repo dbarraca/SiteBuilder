@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const AddSection = ({ sectionOptions }) => {
+const AddSection = ({ sectionOptions, onAddSection }) => {
     const [ selectedSection, setSelectedSection ] = useState("hero");
 
     const handleAdd = () => {

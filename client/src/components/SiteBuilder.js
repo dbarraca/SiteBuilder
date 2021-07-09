@@ -6,11 +6,13 @@ import AddSection from './AddSection';
 
 
 const SiteBuilder = ({ sectionOptions, sections }) => {
-    // const onAddSection = (addedSection) => {
-    //     setSections(
-    //         [ ...sections, addedSection ]
-    //     );
-    // }
+    const onAddSection = (addedSection) => {
+        console.log(addedSection);
+
+        // setSections(
+        //     [ ...sections, addedSection ]
+        // );
+    }
 
     return (
         <div className="site-builder">
@@ -23,9 +25,7 @@ const SiteBuilder = ({ sectionOptions, sections }) => {
             <ContentForm type="testimonial" />
             <ContentForm type="cards" /> */}
 
-            {/* onAddSection={onAddSection} */}
-
-            <AddSection sectionOptions={sectionOptions} />
+            <AddSection sectionOptions={sectionOptions}  onAddSection={onAddSection}/>
         </div>
     )
 }
