@@ -1,4 +1,4 @@
-import Section from './components/Section'
+// import Section from './components/Section'
 import SiteBuilder from './components/SiteBuilder';
 import { useState, useEffect } from 'react';
 
@@ -12,8 +12,6 @@ function App() {
     const getSite = async () => {
       const siteFromServer = await fetchSite(currSubdomain);
 
-      // console.log("section in effect: ", siteFromServer);
-
       setSite(siteFromServer);
     }
 
@@ -24,7 +22,12 @@ function App() {
   const fetchSite = async (subdomain) => {
       const API = process.env.NODE_ENV === 'production' ? 'https://pagestager.herokuapp.com' : 'http://localhost:5000';
 
-      const res = await fetch(`${API}/sites/subdomain/${subdomain}`);
+      const res = await fetch(`${API}/sites/subdomain/${subdomain}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        } 
+      });
       const data = await res.json();
   
       return data;

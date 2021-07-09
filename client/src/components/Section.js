@@ -3,7 +3,7 @@ import Content from './Content';
 
 const Section = ({ type }) => {
     return (
-        <section class={`${type}-section`}>
+        <section className={`${type}-section`}>
             <Content type={type}/>
         </section>
     );

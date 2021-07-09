@@ -4,13 +4,13 @@ const Navbar = () => {
     return (
         <div className="navbar">
                 <nav>
-                    <a href="#"><span>Navbar</span></a>
+                    <a href="https://www.google.com/"><span>Navbar</span></a>
 
                     <ul>
-                        <li><a href="#"><span>Link 1</span></a></li>
-                        <li><a href="#"><span>Link 2</span></a></li>
-                        <li><a href="#"><span>Link 3</span></a></li>
-                        <li><a href="#"><span>Link 4</span></a></li>
+                        <li><a href="https://www.google.com/"><span>Link 1</span></a></li>
+                        <li><a href="https://www.google.com/"><span>Link 2</span></a></li>
+                        <li><a href="https://www.google.com/"><span>Link 3</span></a></li>
+                        <li><a href="https://www.google.com/"><span>Link 4</span></a></li>
                     </ul>
                 </nav>
         </div>

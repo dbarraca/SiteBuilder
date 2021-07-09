@@ -16,8 +16,8 @@ const AddSection = ({ sectionOptions }) => {
         <section>
             <div className="add-section">
                 <select id="sectionSelect" onChange={handleSelect}>
-                    {sectionOptions && sectionOptions.map((option) => (
-                        <option value={option}>{option}</option>
+                    {sectionOptions && sectionOptions.map((option, index) => (
+                        <option key={index} value={option}>{option}</option>
                     ))}
                 </select>
 
