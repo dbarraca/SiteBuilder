@@ -1,21 +1,23 @@
 import { useState } from 'react';
 
-const AddSection = ({ sectionOptions, onAddSection }) => {
-    const [ selectedSection, setSelectedSection ] = useState("hero");
+const AddSection = ({ sectionOptions, onAdd }) => {
+    const [ sectionType, setSectionType ] = useState("hero");
 
     const handleAdd = () => {
-        // onAddSection(selectedSection);
-        console.log(selectedSection);
+        console.log(sectionType);
+
+        onAdd(sectionType);
     }
 
-    const handleSelect = () => {
-        setSelectedSection(document.querySelector("#sectionSelect").value);
+    const handleSelect = (e) => {
+        console.log(e.target.value);
+        setSectionType(e.target.value);
     }
 
     return (
         <section>
             <div className="add-section">
-                <select id="sectionSelect" onChange={handleSelect}>
+                <select id="sectionSelect" onChange={(e) => handleSelect(e)}>
                     {sectionOptions && sectionOptions.map((option, index) => (
                         <option key={index} value={option}>{option}</option>
                     ))}

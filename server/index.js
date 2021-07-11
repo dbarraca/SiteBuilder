@@ -23,7 +23,7 @@ else {
 }
 
 const app  = express();
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
@@ -44,7 +44,7 @@ var sitesRouter = require('./routes/sites');
 app.use('/sites', sitesRouter);
 
 // If in production, then use static frontend build files.
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {    
     // Serve static folder
     app.use(express.static('../client/build'));
 

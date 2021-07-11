@@ -9,3 +9,23 @@
 //     margin-inline-end: 0px;
 //     border: 1px solid transparent;
 // }
+
+section {
+    border-bottom: 1px solid #DDD;
+}
+
+.delete-section {
+    align-self: flex-end;
+}
+
+.content-form .heading {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 0;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    border: 1px solid transparent;
+}

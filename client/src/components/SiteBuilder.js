@@ -1,31 +1,23 @@
 import "./css/SiteBuilder.scss";
 // import { useState } from 'react';
-import Section from './Section';
-// import ContentForm from './ContentForm';
+// import Section from './Section';
+import ContentForm from './ContentForm';
 import AddSection from './AddSection';
 
 
-const SiteBuilder = ({ sectionOptions, sections }) => {
-    const onAddSection = (addedSection) => {
-        console.log(addedSection);
-
-        // setSections(
-        //     [ ...sections, addedSection ]
-        // );
-    }
+const SiteBuilder = ({ sectionOptions, sections, onAdd, onMoveUp, onMoveDown, onDelete }) => {
 
     return (
         <div className="site-builder">
 
-            {sections && sections.map((section, index) => (
-                <Section key={index} type={section.type} />
+            {sections && sections.sort((sect1, sect2) => { return sect1.order - sect2.order }).map((section, index) => (
+                <ContentForm key={index} section={section} index={index}
+                 onMoveUp={onMoveUp} onMoveDown={onMoveDown} onDelete={onDelete}/>
             ))}
 
-            {/* <ContentForm type="feature" />
-            <ContentForm type="testimonial" />
-            <ContentForm type="cards" /> */}
+            {/* <Section key={index} type={section.type} /> */}
 
-            <AddSection sectionOptions={sectionOptions}  onAddSection={onAddSection}/>
+            <AddSection sectionOptions={sectionOptions} onAdd={onAdd}/>
         </div>
     )
 }
