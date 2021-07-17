@@ -27,7 +27,7 @@
 //     border-bottom: 1px solid #000;
 // }
 
-.navbar nav a {
+.nav-link {
     color: #000;
     text-decoration: none;
     font-size: 24px;
@@ -38,10 +38,10 @@
     padding: 1em;
 }
 
-.navbar nav > a {
+.brand-link {
     font-weight: bold;
 }
 
-.navbar nav a:hover {
+.brand-link:hover {
     text-decoration: underline;
 }

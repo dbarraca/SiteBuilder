@@ -3,20 +3,24 @@ import './css/ContentForm.scss';
 import HeroForm from './HeroForm';
 import CardsForm from './CardsForm';
 import TestimonialForm from './TestimonialForm';
-import Socials from './Socials';
-import CTA from './CTA';
-import Pricing from './Pricing';
+import SocialsForm from './SocialsForm';
+import CTAForm from './CTAForm';
+import PricingForm from './PricingForm';
 import FeatureForm from './FeatureForm';
-import Email from './Email';
-import About from './About';
-import Navbar from './Navbar';
+import EmailForm from './EmailForm';
+import AboutForm from './AboutForm';
+import NavbarForm from './NavbarForm';
+
+import ArrowUp from "./img/ArrowUp.svg";
+import ArrowDown from "./img/ArrowDown.svg";
+import Close from "./img/x.svg";
 
 const ContentForm = ({ section, index, onMoveUp, onMoveDown, onDelete }) => {
     let content;
 
     switch (section.type) {
         case "navbar":
-            content = <Navbar />;
+            content = <NavbarForm />;
             break;
         case "hero":
             content = <HeroForm heading={section.heading}/>;
@@ -28,22 +32,22 @@ const ContentForm = ({ section, index, onMoveUp, onMoveDown, onDelete }) => {
             content = <TestimonialForm />;
             break;
         case "socials":
-            content = <Socials />;
+            content = <SocialsForm />;
             break;
         case "cta":
-            content = <CTA />;
+            content = <CTAForm />;
             break;
         case "pricing":
-            content = <Pricing />;
+            content = <PricingForm />;
             break;
         case "feature":
             content = <FeatureForm />;
             break;
         case "email":
-            content = <Email />;
+            content = <EmailForm />;
             break;
         case "about":
-            content = <About />;
+            content = <AboutForm />;
             break;
         default:
             content = <p>{section.type}</p>;
@@ -51,15 +55,23 @@ const ContentForm = ({ section, index, onMoveUp, onMoveDown, onDelete }) => {
 
     return (
         <section className={`${section.type}-section`}>
-            
+            <div className="section-move">
+                <button className="arrow-button section-button" onClick={(sectionId) => onMoveUp(section)}>
+                    <img src={ArrowUp} alt="Up Arrow"/>
+                </button>
+                <button className="arrow-button section-button" onClick={(sectionId) => onMoveDown(section._id)}>
+                    <img src={ArrowDown} alt="Down Arrow"/>
+                </button>
+            </div>
+
             <div className="content content-form">
                 {content}
             </div>
 
-            <div className="section-edit">
-                <button className="delete-section" onClick={(sectionId) => onDelete(section._id)}>X</button>
-                <button onClick={(sectionId) => onMoveUp(section._id)}>Up</button>
-                <button onClick={(sectionId) => onMoveDown(section._id)}>Down</button>
+            <div className="delete-wrap">
+                <button className="delete-section section-button" onClick={(sectionId) => onDelete(section._id)}>
+                    <img src={Close} alt="Close Icon"/>
+                </button>
             </div>
         </section>
     );

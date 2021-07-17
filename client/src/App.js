@@ -1,5 +1,6 @@
 // import Section from './components/Section'
 import SiteBuilder from './components/SiteBuilder';
+import Site from './components/Site';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -63,14 +64,15 @@ function App() {
     return data;
   }
 
-  const moveSectionUp = async (sectionId) => {
-    const res = await fetch(`${API}/sites/${site._id}/sections/${sectionId}/up`, {
+  const moveSectionUp = async (section) => {
+    const res = await fetch(`${API}/sites/${site._id}/sections/${section._id}/up`, {
       method: "PUT",
       headers: {
         'Content-Type' : 'application/json'
-      }
+      },
+      body: JSON.stringify({ section: section })
     });
-
+  
     const data = await res.json();
 
     setSite(data);
@@ -88,16 +90,7 @@ function App() {
       <SiteBuilder sectionOptions={sectionOptions} sections={site.sections} onAdd={addSection} 
        onMoveUp={moveSectionUp} onMoveDown={moveSectionDown} onDelete={deleteSection} />
 
-      {/* <Section type="hero"/>
-      <Section type="cards"/>
-      <Section type="feature"/>
-      <Section type="testimonial"/>
-      <Section type="cta"/>
-      <Section type="pricing"/>
-      <Section type="about"/>
-      <Section type="socials"/>
-      <Section type="email"/> */}
-      {/* <Section type="footer"/> */}
+      <Site sections={site.sections} />
     </div>
   );
 }

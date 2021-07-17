@@ -7,7 +7,7 @@ const FeatureForm = () => {
             <div className="feature-text">
                 <input className="feature-heading heading" type="text" placeholder="Feature"/>
 
-                <textarea className="feature-message message"
+                <textarea className="feature-message message text-input"
                 placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed tempus urna et pharetra pharetra massa massa ultricies mi."
                 />
             </div>
