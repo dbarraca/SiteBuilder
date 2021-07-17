@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 // Site Model
 const Site = require('../models/site');
 
-// @route   Get api/sites
+// @route   Get /sites
 // @ desc   Get all sites
 // @ access Public
 router.get('/', async (req, res) => {
@@ -49,7 +50,7 @@ router.get('/subdomain/:subdomain', async (req, res) => {
 // @route POST /sites/:siteId/sections
 // @desc Add one section to a site
 // @access Public
-router.route('/:siteId/sections').post(async (req, res) => {
+router.post('/:siteId/sections', auth, async (req, res) => {
     try {
         const site = await Site.findById(req.params.siteId);
 
@@ -70,22 +71,26 @@ router.route('/:siteId/sections').post(async (req, res) => {
 // @route PUT /sites/:siteID/sections/:sectionId
 // @desc Delete one section of a site
 // @access Public
-router.route('/:siteId/sections/:sectionId/up').put(async (req, res) => {
+router.put('/:siteId/sections/:sectionId/up', auth, async (req, res) => {
     try {
         const site = await Site.findById(req.params.siteId);
 
-        console.log("section moved up", site.sections.indexOf({_id: req.params.sectionId}));
+        // console.log("sections", site.sections);
+        console.log("section moved up", site.sections.indexOf(req.body.section));
+
+        // console.log("section moved up", site.sections.indexOf(req.body.section));
+        // console.log("section moved up", "_id", req.body.section);
 
         // site.sections.set()
 
         // await site.save();
-        // console.log("section moved up", site.sections.indexOf({_id: req.params.sectionId}));
 
-/*        site.updateOne(
+        /*        
+        site.updateOne(
             { _id: req.params.siteId, section: req.params.sectionId },
             { $set: { "grades.$" : 444 } }
-         )*/
-
+        )
+        */
 
         return res.status(200).json(site);
 
@@ -98,7 +103,7 @@ router.route('/:siteId/sections/:sectionId/up').put(async (req, res) => {
 // @route Delete /sites/:siteID/sections/:sectionId
 // @desc Delete one section of a site
 // @access Public
-router.route('/:siteId/sections/:sectionId').delete(async (req, res) => {
+router.delete('/:siteId/sections/:sectionId', auth, async (req, res) => {
     try {
         const site = await Site.findById(req.params.siteId);
 
