@@ -1,12 +1,18 @@
-import "./css/SiteBuilder.scss";
-import Section from './Section';
+import { Component } from 'react';
 
-const Site = ({ sections }) => {
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+import { fetchSites } from '../actions/siteActions';
+
+import "./css/SiteBuilder.scss";
+import Sections from './Sections';
+
+const Site = ({ siteId }) => {
+
     return (
         <div className="site">
-            {sections && sections.sort((sect1, sect2) => { return sect1.order - sect2.order }).map((section, index) => (
-                <Section key={index} type={section.type}/>
-            ))}
+            <Sections siteId={siteId}/>           
         </div>
     )
 }

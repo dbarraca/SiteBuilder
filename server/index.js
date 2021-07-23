@@ -50,6 +50,9 @@ connection.once('open', () => {
 // Sites Routes
 app.use('/sites', require('./routes/sites'));
 
+// Section Routes
+app.use('/sections', require('./routes/sections'));
+
 // Users Routes
 app.use('/users', require('./routes/users'));
 

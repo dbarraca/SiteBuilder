@@ -1,7 +1,12 @@
+import { useState, useEffect } from 'react';
+
 // import Section from './components/Section'
 import SiteBuilder from './components/SiteBuilder';
 import Site from './components/Site';
-import { useState, useEffect } from 'react';
+import SiteSelector from './components/SiteSelector';
+
+import { Provider } from 'react-redux'; 
+import store from './store';
 
 function App() {
   const [ currSubdomain, setCurrSubdomain ] = useState("donutshop");
@@ -10,28 +15,29 @@ function App() {
   const sectionOptions = [ "hero", "cards", "feature", "testimonial", "cta",  "pricing", "about", "socials", "email", "footer"];
   const [ site, setSite ] = useState({});
 
-  useEffect(() => {
-    const getSite = async () => {
-      const siteFromServer = await fetchSite(currSubdomain);
+  // useEffect(() => {
+  //   const getSite = async () => {
+  //     const siteFromServer = await fetchSite(API, currSubdomain);
 
-      setSite(siteFromServer);
-    }
+  //     setSite(siteFromServer);
+  //   }
 
-    getSite();
-  },[]);
+  //   getSite();
+  // },[]);
   
   // Fetch site
+  /*
   const fetchSite = async (subdomain) => {
-      const res = await fetch(`${API}/sites/subdomain/${subdomain}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        } 
-      });
-      const data = await res.json();
-  
-      return data;
-  }
+    const res = await fetch(`${API}/sites/subdomain/${subdomain}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      } 
+    });
+    const data = await res.json();
+
+    return data;
+   }*/
 
   // Delete Section
   const deleteSection = async (sectionId) => {
@@ -84,14 +90,20 @@ function App() {
     console.log(sectionId);
   }
 
-
   return (
-    <div className="App">
-      <SiteBuilder sectionOptions={sectionOptions} sections={site.sections} onAdd={addSection} 
-       onMoveUp={moveSectionUp} onMoveDown={moveSectionDown} onDelete={deleteSection} />
+    <Provider store={store}>
+      <div className="App">
+        {/* <SiteSelector /> */}
+        <Site siteId="60e5d241cbc583cc411b974c"/>
 
-      <Site sections={site.sections} />
-    </div>
+        {/* sections={site.sections}  */}
+
+        {/* <SiteBuilder siteId="60e5d241cbc583cc411b974c" sectionOptions={sectionOptions} onAdd={addSection}  */}
+         onMoveUp={moveSectionUp} onMoveDown={moveSectionDown} onDelete={deleteSection} />
+
+        {/* <Site sections={site.sections} /> */}
+      </div>
+    </Provider>
   );
 }
 

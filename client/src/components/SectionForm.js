@@ -15,42 +15,42 @@ import ArrowUp from "./img/ArrowUp.svg";
 import ArrowDown from "./img/ArrowDown.svg";
 import Close from "./img/x.svg";
 
-const ContentForm = ({ section, index, onMoveUp, onMoveDown, onDelete }) => {
-    let content;
+const SectionForm = ({ section, onMoveUp, onMoveDown, onDelete }) => {
+    let sectionForm;
 
     switch (section.type) {
         case "navbar":
-            content = <NavbarForm />;
+            sectionForm = <NavbarForm />;
             break;
         case "hero":
-            content = <HeroForm heading={section.heading}/>;
+            sectionForm = <HeroForm heading={section.heading}/>;
             break;
         case "cards":
-            content = <CardsForm />;
+            sectionForm = <CardsForm />;
             break;
         case "testimonial":
-            content = <TestimonialForm />;
+            sectionForm = <TestimonialForm />;
             break;
         case "socials":
-            content = <SocialsForm />;
+            sectionForm = <SocialsForm />;
             break;
         case "cta":
-            content = <CTAForm />;
+            sectionForm = <CTAForm />;
             break;
         case "pricing":
-            content = <PricingForm />;
+            sectionForm = <PricingForm />;
             break;
         case "feature":
-            content = <FeatureForm />;
+            sectionForm = <FeatureForm />;
             break;
         case "email":
-            content = <EmailForm />;
+            sectionForm = <EmailForm />;
             break;
         case "about":
-            content = <AboutForm />;
+            sectionForm = <AboutForm />;
             break;
         default:
-            content = <p>{section.type}</p>;
+            sectionForm = <p>{section.type}</p>;
     }
 
     return (
@@ -64,8 +64,8 @@ const ContentForm = ({ section, index, onMoveUp, onMoveDown, onDelete }) => {
                 </button>
             </div>
 
-            <div className="content content-form">
-                {content}
+            <div className="section section-form">
+                {sectionForm}
             </div>
 
             <div className="delete-wrap">
@@ -77,4 +77,4 @@ const ContentForm = ({ section, index, onMoveUp, onMoveDown, onDelete }) => {
     );
 }
 
-export default ContentForm;
+export default SectionForm;
