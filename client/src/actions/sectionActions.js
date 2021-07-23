@@ -1,9 +1,9 @@
 import { FETCH_SECTIONS, NEW_SECTION } from './types';
 
 export const fetchSections = (siteId) => async dispatch => {
-    console.log("fetch sections siteId: ", siteId);
+    const API = process.env.NODE_ENV === 'production' ? 'https://pagestager.herokuapp.com' : 'http://localhost:5000';
 
-    const res = await fetch(`http://localhost:5000/sections/${siteId}`, {
+    const res = await fetch(`${API}/sections/${siteId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
